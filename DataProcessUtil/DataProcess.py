@@ -125,7 +125,7 @@ def data_processB(data_path,wb_module_path,output_path):
     j = 0
     for i in range(1, data_number):
         j = j + 1
-        print(sheet.cell(j, 7).value)
+       # print(sheet.cell(j, 7).value)
         sheet_module_B.cell(11 + i, 11).value = float(sheet.cell(j, 7).value)
 
     output_path=output_path
