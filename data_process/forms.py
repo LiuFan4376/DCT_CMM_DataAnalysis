@@ -9,13 +9,17 @@ class UserInfoForm(forms.Form):
                                               'max_length': '请输入正确的工号',
                                               'min_length': '请输入正确的工号'},
                               strip=True)
-    password = forms.CharField(max_length=20, min_length=6,  required=True)
+    password = forms.CharField(max_length=20, min_length=6, required=True)
 
 
 def clean_name(self):
     try:
-        models.UserInfo.objects.get(name=self.numbers)
-    except models.UserInfo.DoesNotExist:
+        models.User.objects.get(username=self.numbers)
+    except models.User.DoesNotExist:
         ValueError('不存在该用户')
     else:
         pass
+
+
+class UploadFileForm(forms.Form):
+    file = forms.FileField(required=True)

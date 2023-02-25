@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <link rel="stylesheet" href="/static/css/data_process.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+<div class="box">
+    <h2>上传原始数据</h2>
+<form method="post" action="" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="inputBox">
+        <input type="file" name="myfile">
+    </div>
+    <div>
+         <input type="radio" name="select_program" value="A" /> A程序<br />
+        <input type="radio" name="select_program" value="B" /> B程序<br />
+    </div>
+    <input type="submit" value="提交">
+</form>
+</div>
+</body>
+</html>

@@ -1,8 +1,5 @@
 from django.db import models
-
+from django.contrib.auth import get_user_model
 
 # Create your models here.
-
-class UserInfo(models.Model):
-    name = models.CharField(max_length=10,null=True,blank=True,verbose_name='工号')
-    password = models.CharField(max_length=15,null=True,blank=True,verbose_name='密码')
+User = get_user_model()

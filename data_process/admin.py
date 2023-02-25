@@ -5,9 +5,11 @@ from . import models
 
 #register = admin.site.register(models.UserInfo)
 
+"""
 
 @admin.register(models.UserInfo)
 class UserInfoAdmin(admin.ModelAdmin):
     list_display = ['name', 'password']
     list_display_links = ['name']
+"""
 

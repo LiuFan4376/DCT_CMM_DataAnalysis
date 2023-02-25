@@ -71,13 +71,13 @@ class DataAnalysis:
         print('输出完成')
 
 
-def data_processB():
-    import openpyxl
+def data_processB(data_path,wb_module_path,output_path):
 
     '''
     获取三坐标检测数据EXCEL文件
     '''
-    wb_path = input("请输入三坐标检测数据路径：")
+    wb_path=data_path
+    #wb_path = input("请输入三坐标检测数据路径：")
     # wb_path = '/Users/liufan/Desktop/DC调试计划/GB5R051220608A0050-B-上机确认-001.XLSX'
     wb = openpyxl.load_workbook(wb_path)
     sheet_names = wb.sheetnames
@@ -113,7 +113,7 @@ def data_processB():
     '''
     获取模板工作薄
     '''
-    wb_module_path = input("请输入数据整理模版路径：")
+    #wb_module_path = input("请输入数据整理模版路径：")
     # wb_module_path = '/Users/liufan/Desktop/DC调试计划/模板.xlsx'
     wb_module = openpyxl.load_workbook(wb_module_path)
     sheet_module_B = wb_module['B測定']
@@ -128,10 +128,10 @@ def data_processB():
         print(sheet.cell(j, 7).value)
         sheet_module_B.cell(11 + i, 11).value = float(sheet.cell(j, 7).value)
 
-    # output_path=input('请输入处理后的工作表存储路径：')
-    output_path = '/Users/liufan/Desktop'
+    output_path=output_path
+    #output_path = '/Users/liufan/Desktop'
     # os.chdir(output_path)  # 修改工作路径
     output = output_path + '/B程序模板化.xlsx'
     wb_module.save(output)
-    print('输出完成')
-    wb.save('/Users/liufan/Desktop/B_clean.xlsx')
+    #print('输出完成')
+    #wb.save('/Users/liufan/Desktop/B_clean.xlsx')
