@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'DCT_CMM_DataAnalysis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dataprocess',
+        'NAME': 'liufanproject',
         'USER': 'root',
-        'PASSWORD': '19981015@lf',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'ghac.cn',
+        'HOST': '10.110.39.247',
         'PORT': '3306',
     }
 }
